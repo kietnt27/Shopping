@@ -1,40 +1,39 @@
 
 <div id = "taskbar_container">
   <mat-toolbar id="taskbar">
-    <button mat-icon-button class="icon" aria-label="">
+    <button mat-icon-button>
       <mat-icon>menu</mat-icon>
     </button>
     <span>TK Shop</span>
     <span class="spacer"></span>
-
-    <button mat-icon-button class="icon" aria-label="">
+    <button mat-icon-button>
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button class="icon" aria-label="">
+    <button mat-icon-button>
       <mat-icon>home</mat-icon>
     </button>
-    <button mat-icon-button class="icon" aria-label="">
+    <button mat-icon-button>
       <mat-icon>search</mat-icon>
     </button>
   </mat-toolbar>
 </div>
 
-<div id="content_container">
+<div id="content">
   <div class="post">
-    <mat-card class="item_container" *ngFor="let post of posts">
-      <img mat-card-image src="{{post.image}}">
+    <mat-card class="item" *ngFor="let post of posts">
       <mat-card-content id="info">
-        <br>
-        <p>Tên: {{post.name}}</p>
+        <h1>{{post.name}}</h1>
+      <img mat-card-image src="{{post.image}}">
+      <br>
         <p>Chất liệu: {{post.material}}</p>
         <p>Giá: {{post.price}}</p>
-        <p>Mô tả: {{post.sub}}</p>
+        <p>HDSD: {{post.sub}}</p>
         <p *ngIf="post.order == false">Tình trạng: Còn hàng</p>
         <p *ngIf="post.order == true">Tình trạng: Hết hàng</p>
         <br>
       </mat-card-content>
-      <mat-card-actions id="btn_container">
-        <button mat-button id="add_btn">MUA</button>
+      <mat-card-actions id="btn">
+        <button mat-button id="add">MUA</button>
       </mat-card-actions>
     </mat-card>
     
@@ -45,7 +44,8 @@
       <button class="button" mat-stroked-button color="black">1</button>
       <button class="button" mat-stroked-button color="black">2</button>
       <button class="button" mat-stroked-button color="black">3</button>
-      <button class="button" mat-stroked-button color="black">>>></button>
+      <button class="button" mat-stroked-button color="black">></button>
+      <button class="button" mat-stroked-button color="black">>></button>
     </div>
   </div>
 </div>
